@@ -7,7 +7,7 @@
 class Agend < Formula
   desc "CLI for agend — remote environments for AI agents"
   homepage "https://agend.sh"
-  version "1.1.10"
+  version "1.1.9"
   license "MIT"
 
   on_macos do
