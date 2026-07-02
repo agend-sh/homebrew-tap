@@ -1,4 +1,4 @@
-# This file is auto-updated by GoReleaser on each release.
+# This file is auto-updated by .github/workflows/update-formula.yml.
 # Manual edits will be overwritten.
 #
 # To install: brew install agend-sh/tap/agend

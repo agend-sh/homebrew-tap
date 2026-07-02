@@ -1,0 +1,41 @@
+name: Update formula
+
+# Self-updating tap: poll the latest agend-sh/cli release and regenerate
+# Formula/agend.rb from its checksums.txt. Runs on a schedule (and manually
+# via workflow_dispatch right after a release). Same-repo GITHUB_TOKEN write —
+# no PAT, no deploy key, nothing to expire.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-formula
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Regenerate formula from latest cli release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./scripts/update-formula.sh
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/agend.rb
+          if git diff --cached --quiet; then
+            echo "formula up to date"
+            exit 0
+          fi
+          git commit -m "Brew formula update for agend version v$(cat .latest-version)"
+          git push
