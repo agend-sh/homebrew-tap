@@ -7,28 +7,28 @@
 class Agend < Formula
   desc "CLI for agend — remote environments for AI agents"
   homepage "https://agend.sh"
-  version "1.2.9"
+  version "1.2.10"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/agend-sh/cli/releases/download/v1.2.9/agend-1.2.9-darwin-arm64.tar.gz"
-      sha256 "bd892b6d42d3c596ca222625d3126e1a51d167bfb6a49e445f5c2f396b2fd61d"
+      url "https://github.com/agend-sh/cli/releases/download/v1.2.10/agend-1.2.10-darwin-arm64.tar.gz"
+      sha256 "a3058c01a493a52ed331eca974e76838bb4ed6663de98e0308a34c5b0820d492"
     end
     on_intel do
-      url "https://github.com/agend-sh/cli/releases/download/v1.2.9/agend-1.2.9-darwin-amd64.tar.gz"
-      sha256 "4444a493269e15da26ffaee239b3fe950847684ada391deb1c60d6ceb67741fc"
+      url "https://github.com/agend-sh/cli/releases/download/v1.2.10/agend-1.2.10-darwin-amd64.tar.gz"
+      sha256 "79f153471a66dda861b7c2d1fc5db06ef8f1c322319c666209303ec8fb60667d"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/agend-sh/cli/releases/download/v1.2.9/agend-1.2.9-linux-arm64.tar.gz"
-      sha256 "54e09f58f1fec82275a9b29227e6e51bb6de980c17d65f435a46bd726dbe7677"
+      url "https://github.com/agend-sh/cli/releases/download/v1.2.10/agend-1.2.10-linux-arm64.tar.gz"
+      sha256 "30b5e664a7e66c02ab467b38ae8341d3d52f2c3a3174949ea9662a2b5e10865d"
     end
     on_intel do
-      url "https://github.com/agend-sh/cli/releases/download/v1.2.9/agend-1.2.9-linux-amd64.tar.gz"
-      sha256 "36facf7093642e763ffca9f3971f4fa24a768d05b830df1ab219ff468ed0cff2"
+      url "https://github.com/agend-sh/cli/releases/download/v1.2.10/agend-1.2.10-linux-amd64.tar.gz"
+      sha256 "d66b301340f6c4f74f5e3b811197c73dec93f0cf4507f57885b8dcddf54e3a45"
     end
   end
 
